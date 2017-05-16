@@ -151,7 +151,7 @@ static NSString *const kAdditionalParametersKey = @"additionalParameters";
   [aCoder encodeObject:_additionalParameters forKey:kAdditionalParametersKey];
 }
 
-- (NSDictionary<NSString *, NSObject<NSCopying> *> *) getRawJSON {
+- (NSDictionary<NSString *, NSObject<NSCopying> *> *) getRawJSONDict {
     return _rawJSONDict;
 }
 
