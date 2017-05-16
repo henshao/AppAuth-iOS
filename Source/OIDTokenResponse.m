@@ -58,7 +58,9 @@ static NSString *const kScopeKey = @"scope";
  */
 static NSString *const kAdditionalParametersKey = @"additionalParameters";
 
-@implementation OIDTokenResponse
+@implementation OIDTokenResponse {
+    NSDictionary<NSString *, NSObject<NSCopying> *> *_rawJSONDict;
+}
 
 @synthesize request = _request;
 @synthesize accessToken = _accessToken;
@@ -105,6 +107,7 @@ static NSString *const kAdditionalParametersKey = @"additionalParameters";
   self = [super init];
   if (self) {
     _request = [request copy];
+    _rawJSONDict = parameters;
     NSDictionary<NSString *, NSObject<NSCopying> *> *additionalParameters =
         [OIDFieldMapping remainingParametersWithMap:[[self class] fieldMap]
                                          parameters:parameters
@@ -146,6 +149,10 @@ static NSString *const kAdditionalParametersKey = @"additionalParameters";
   [OIDFieldMapping encodeWithCoder:aCoder map:[[self class] fieldMap] instance:self];
   [aCoder encodeObject:_request forKey:kRequestKey];
   [aCoder encodeObject:_additionalParameters forKey:kAdditionalParametersKey];
+}
+
+- (NSDictionary<NSString *, NSObject<NSCopying> *> *) getRawJSON {
+    return _rawJSONDict;
 }
 
 #pragma mark - NSObject overrides

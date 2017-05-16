@@ -107,6 +107,8 @@ NS_ASSUME_NONNULL_BEGIN
                      parameters:(NSDictionary<NSString *, NSObject<NSCopying> *> *)parameters
                      NS_DESIGNATED_INITIALIZER;
 
+- (NSDictionary<NSString *, NSObject<NSCopying> *> *) getRawJSONDict;
+
 @end
 
 NS_ASSUME_NONNULL_END
