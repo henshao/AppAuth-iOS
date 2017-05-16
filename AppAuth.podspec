@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
-  s.name         = "AppAuth"
-  s.version      = "0.8.0"
+  s.name         = "WLAAppAuth"
+  s.version      = "0.9.1"
   s.summary      = "AppAuth for iOS and macOS is a client SDK for communicating with OAuth 2.0 and OpenID Connect providers."
 
   s.description  = <<-DESC
@@ -16,7 +16,7 @@ tasks like performing an action with fresh tokens.
 
                    DESC
 
-  s.homepage     = "https://openid.github.io/AppAuth-iOS"
+  s.homepage     = "https://github.com/henshao/AppAuth-iOS"
   s.license      = "Apache License, Version 2.0"
   s.authors      = { "William Denniss" => "wdenniss@google.com",
                      "Steven E Wright" => "stevewright@google.com",
@@ -29,7 +29,7 @@ tasks like performing an action with fresh tokens.
 
   s.platforms    = { :ios => "7.0", :osx => "10.8", :watchos => "2.0", :tvos => "9.0" }
 
-  s.source       = { :git => "https://github.com/openid/AppAuth-iOS.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/henshao/AppAuth-iOS.git", :tag => s.version }
 
   s.pod_target_xcconfig = {
     # Treat warnings as errors.
